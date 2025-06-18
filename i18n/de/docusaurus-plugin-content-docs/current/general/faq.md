@@ -32,6 +32,18 @@ Für ["Bodenmessdaten"](/a-data-groundbased) sowie für ["Klimastationen – Hom
 
 Für andere Datentypen beachten Sie bitte deren entsprechende Dokumentation.
 
+## Schneemessdaten – Welche Daten gibt’s es und wo finde ich sie?
+Die Messmethoden der MeteoSchweiz in Bezug auf Schneehöhe und Neuschnee sind [im Wetterlexikon beschrieben](https://www.meteoschweiz.admin.ch/wetter/wetter-und-klima-von-a-bis-z/schneehoehenmessung.html). Es ist wichtig festzuhalten, dass die offizielle, qualitätsgeprüfte Schneemessung weiterhin die manuelle Messung ist. Ein Beobachter/eine Beobachterin führt einmal pro Tag morgens um 6UTC eine Messung durch. Diese Daten sind deshalb erst ab Granularität D verfügbar! Die automatische Schneehöhenmessung liefert zwar Echtzeitdaten in einer hohen Auflösung (Granularität T), ist zum einen fehleranfällig und wird ausserdem aktuell nicht manuell geprüft. Sie darf deshalb nicht als offizielle Messreihe verwendet werden. Weitere Informationen zur automatischen Messung, die seit letztem Winter von MeteoSchweiz publiziert wird, haben wir in einem [Blog vom November 2024](https://www.meteoschweiz.admin.ch/ueber-uns/meteoschweiz-blog/de/2024/11/meteoschweiz-publiziert-automatisch-gemessene-schneehoehen-auf-der-webseite.html) für zusammengefasst.
+
+In welchen Collections finden Sie die Schneemessdaten?
+-	Schneehöhe manuell (offizielle Messung): Parameter hto000* in der Collection «Manuelle Niederschlagsstationen»
+-	Neuschnee manuell (offizielle Messung): Parameter hns000* in der Collection «Manuelle Niederschlagsstationen»
+-	Schneehöhe automatisch: Parameter htoaut* in der Collection «Automatische Wetterstationen»
+-	Neuschnee automatisch existiert nicht (es gibt kein Messgerät, welches den Neuschnee automatisch messen kann)
+
+Achtung: Die manuelle Schneehöhenmessung findet teilweise nicht am gleichen Ort wie die automatische Schneehöhenmessung statt und kann deshalb nicht per se miteinander verglichen werden!
+
+
 
 ## Was ist im Zusammenhang mit der Qualitätskontrolle der Daten zu beachten?
 <!-- Diesen Titel nicht ändern! -->
@@ -66,6 +78,8 @@ Um Daten von bester Qualität zu erhalten, empfehlen wir daher, nur die überarb
 Die täglichen räumlichen Klimadaten [`RprelimD`, `TabsD`, `TmaxD`, `TminD` und `SrelD`](/c-climate-data/c3-ground-based-climate-data) werden täglich auf der Grundlage der verfügbaren Tagesdaten berechnet.
 
 Wie im Abschnitt [ground-based measurements](/general/faq#bodenmessdaten) oben erwähnt, werden die Daten erst später überprüft, sodass eine spätere Neuberechnung der Produkte erforderlich ist. Auch die manuell überprüften täglichen Niederschlagswerte werden nach Ablauf des Monats in `RprelimD` aufgenommen, woraus sich das Produkt `RhiresD` ergibt.
+
+
 
 Daher werden die Produkte `TabsD`, `TmaxD`, `TminD`, `SrelD` und `RhiresD` gegen Ende jedes folgenden Monats (um den 25. Tag herum) für den letzten Monat neu berechnet, um die bestmögliche Datenqualität zu gewährleisten.  
 -->
